@@ -1,9 +1,15 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
-  %}
-  <h1 align="center">Notes</h1>
+{% extends "base.html" %} 
+
+{% block title %}Home{% endblock %} 
+
+{% block content %}
+  <h1 align="center">Debatorica</h1>
+  <p align="center">upload your case here!</p>
+  
+  <!-- Display existing notes -->
   <ul class="list-group list-group-flush" id="notes">
     {% for note in user.notes %}
-    <li class="list-group-item">
+    <li class="list-group-item" style="color: black;">
       {{ note.data }}
       <button type="button" class="close" onClick="deleteNote({{ note.id }})">
         <span aria-hidden="true">&times;</span>
@@ -11,6 +17,8 @@
     </li>
     {% endfor %}
   </ul>
+
+  <!-- Note adding form -->
   <form method="POST">
     <textarea name="note" id="note" class="form-control"></textarea>
     <br />
@@ -18,4 +26,17 @@
       <button type="submit" class="btn btn-primary">Add Note</button>
     </div>
   </form>
-  {% endblock %}
+
+  <br>
+
+  <!-- PDF upload form -->
+  <h3 align="center">Upload PDF for Text Extraction</h3>
+  <form method="POST" enctype="multipart/form-data" action="/upload-pdf">
+    <input type="file" name="pdf_file" accept="application/pdf" class="form-control-file" required />
+    <br />
+    <div align="center">
+      <button type="submit" class="btn btn-secondary">Upload PDF</button>
+    </div>
+  </form>
+
+{% endblock %}
