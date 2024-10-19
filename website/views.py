@@ -27,6 +27,14 @@ def home():
 def landingpage():
     return render_template('landingpage.html', user=current_user)
 
+@views.route('/sign-up')
+def sign_up():
+    return render_template('sign_up.html', user=current_user)
+
+@views.route('/login')
+def login():
+    return render_template('login.html', user=current_user)
+
 @views.route('/delete-note', methods=['POST'])
 def delete_note():  
     note = json.loads(request.data) # this function expects a JSON from the INDEX.js file 

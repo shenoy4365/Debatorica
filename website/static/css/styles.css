@@ -150,3 +150,8 @@ a:hover {
     border-color: #3182CE !important;
     box-shadow: 0 0 0 0.2rem rgba(49, 130, 206, 0.25) !important;
 }
+
+/* White text for alerts */
+.alert .text-white {
+    color: #fff !important;
+  }
