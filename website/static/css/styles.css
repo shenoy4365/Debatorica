@@ -1,0 +1,152 @@
+/* styles.css */
+/* Full-page background setup */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #4A5568, #2D3748) !important;
+    color: #FFFFFF !important;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+/* Container modifications */
+.container {
+    padding: 2rem;
+    background: transparent !important;
+}
+
+/* Remove any white backgrounds from child elements */
+.container > div,
+.container > section,
+main,
+.content-wrapper {
+    background: transparent !important;
+}
+
+/* Header styling */
+header h1 {
+    font-size: 3em;
+    color: #FFFFFF !important;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Text elements */
+h1, h2, h3, h4, h5, h6, p {
+    color: #FFFFFF !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Main content styling */
+main p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Button styling */
+.custom-button, .get-started-btn {
+    background-color: #2B6CB0 !important;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover, .get-started-btn:hover {
+    background-color: #2C5282 !important;
+}
+
+/* Navbar styling */
+.navbar {
+    background: rgba(0, 0, 0, 0.2) !important;
+    padding: 0.5rem 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+    margin-right: 1rem;
+}
+
+.nav-item.nav-link {
+    color: #FFFFFF !important;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-item.nav-link:hover {
+    color: #3182CE !important;
+}
+
+/* Logout button styling */
+.logout-btn {
+    background-color: #2B6CB0 !important;
+    color: white !important;
+    border-radius: 5px;
+    padding: 0.5rem 1rem !important;
+    margin-left: 1rem;
+}
+
+.logout-btn:hover {
+    background-color: #2C5282 !important;
+    color: white !important;
+}
+
+/* Get Started button styling */
+.get-started-btn {
+    background-color: #2B6CB0 !important;
+    color: white !important;
+    border-radius: 5px;
+    padding: 0.5rem 1rem !important;
+}
+
+.get-started-btn:hover {
+    background-color: #2C5282 !important;
+    color: white !important;
+}
+
+/* Center the navigation items */
+.navbar-nav {
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Link styling */
+a {
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+a:hover {
+    color: #3182CE;
+    text-decoration: none;
+}
+
+/* Alert modifications to work with dark theme */
+.alert {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Form styling for dark theme */
+.form-control {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #FFFFFF !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: #3182CE !important;
+    box-shadow: 0 0 0 0.2rem rgba(49, 130, 206, 0.25) !important;
+}
