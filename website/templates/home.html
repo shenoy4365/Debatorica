@@ -6,8 +6,13 @@
   <h1 align="center">Debatorica</h1>
   <p align="center">upload your case here!</p>
   
+  <!-- Toggle button for notes -->
+  <div align="center">
+    <button id="toggleNotes" class="btn btn-info" onClick="toggleNotes()">Show Notes</button>
+  </div>
+  
   <!-- Display existing notes -->
-  <ul class="list-group list-group-flush" id="notes">
+  <ul class="list-group list-group-flush" id="notes" style="display: none;">
     {% for note in user.notes %}
     <li class="list-group-item" style="color: black;">
       {{ note.data }}
@@ -39,4 +44,19 @@
     </div>
   </form>
 
+  <script>
+    function toggleNotes() {
+      const notesList = document.getElementById('notes');
+      const toggleButton = document.getElementById('toggleNotes');
+      
+      if (notesList.style.display === 'none') {
+        notesList.style.display = 'block';
+        toggleButton.textContent = 'Hide Notes';
+      } else {
+        notesList.style.display = 'none';
+        toggleButton.textContent = 'Show Notes';
+      }
+    }
+  </script>
+  
 {% endblock %}
