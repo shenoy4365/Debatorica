@@ -3,13 +3,26 @@
 {% block title %}Home{% endblock %} 
 
 {% block content %}
-  <h1 align="center">Debatorica</h1>
-  <p align="center">upload your case here!</p>
-  
-  <!-- Toggle button for notes -->
-  <div align="center">
-    <button id="toggleNotes" class="btn btn-info" onClick="toggleNotes()">Show Notes</button>
-  </div>
+  <!-- PDF upload form -->
+  <h1 class="text-center">Upload PDF for Text Extraction</h1>
+  <p class="text-center">Upload your case here!</p>
+  <form method="POST" enctype="multipart/form-data" action="/upload-pdf" class="text-center">
+    <div class="form-group">
+      <center>
+      <div class="file-input-wrapper">
+        <input type="file" name="pdf_file" accept="application/pdf" class="form-control-file" required />
+      </div>
+    </center>
+    </div>
+    <br />
+    
+    <div class="button-container">
+      <button type="submit" class="btn btn-secondary">Upload PDF</button>
+      <button id="toggleNotes" class="btn btn-info" onClick="toggleNotes()">Show Notes</button>
+    </div>
+  </form>
+
+  <br>
   
   <!-- Display existing notes -->
   <ul class="list-group list-group-flush" id="notes" style="display: none;">
@@ -22,27 +35,6 @@
     </li>
     {% endfor %}
   </ul>
-
-  <!-- Note adding form -->
-  <form method="POST">
-    <textarea name="note" id="note" class="form-control"></textarea>
-    <br />
-    <div align="center">
-      <button type="submit" class="btn btn-primary">Add Note</button>
-    </div>
-  </form>
-
-  <br>
-
-  <!-- PDF upload form -->
-  <h3 align="center">Upload PDF for Text Extraction</h3>
-  <form method="POST" enctype="multipart/form-data" action="/upload-pdf">
-    <input type="file" name="pdf_file" accept="application/pdf" class="form-control-file" required />
-    <br />
-    <div align="center">
-      <button type="submit" class="btn btn-secondary">Upload PDF</button>
-    </div>
-  </form>
 
   <script>
     function toggleNotes() {
@@ -58,5 +50,30 @@
       }
     }
   </script>
+  
+  <style>
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .file-input-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    .form-control-file {
+      width: fit-content;
+      margin: 0 auto;
+    }
+    /* Optional: If you want to style the file input button itself */
+    .form-control-file::-webkit-file-upload-button {
+      margin: 0 auto;
+    }
+</style>
   
 {% endblock %}
